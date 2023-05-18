@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/baseVer2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/leo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="js/base.js"></script>
+
+    <title>購物車明細</title>
+  </head>
+  <body>
+    <!-- 手機板導引列(粗糙) -->
+    <header>
+      <div id="mySidebar">
+        <img src="img/base/logo.png" alt="" />
+        <a href="#" class="">首頁</a>
+        <a href="#" class="">課程</a>
+        <a href="#" class="">活動</a>
+        <a href="#" class="">許願池</a>
+        <a href="#" class="">論壇</a>
+        <a href="#" class="">商城</a>
+      </div>
+      <div class="navBar">
+        <ul class="containerHearder flexWrap flexVerticalCenter">
+          <li>
+            <img
+              src="img/base/menu.png"
+              id="phoneMenu"
+              class="mobileHave"
+              style="height: 30px; margin: 10px"
+              alt=""
+            />
+          </li>
+
+          <li
+            class="flexWrap flexAllCenter"
+            style="font-size: 50px; color: #a4c964; margin: 10px 0px"
+          >
+            <img
+              src="img/base/logo.png"
+              class="miniMobile"
+              style="height: 50px; margin: 0px 5px"
+              alt=""
+            />
+            <p>懸賞啼雀</p>
+          </li>
+          <li
+            class="flexWrap"
+            style="
+              flex-grow: 1;
+              display: flex;
+              align-items: center;
+              justify-content: end;
+            "
+          >
+            <!-- 電腦版導引列 -->
+            <div
+              id="navLink"
+              class="flexWrap flexAllCenter pcHave"
+              style="flex-grow: 1"
+            >
+              <a class="flexAllCenter" href="">首頁</a>
+              <a class="flexAllCenter" href="">課程</a>
+              <a class="flexAllCenter" href="">活動</a>
+              <a class="flexAllCenter" href="">許願池</a>
+              <a class="flexAllCenter" href="">論壇</a>
+              <a class="flexAllCenter" href="">商城</a>
+            </div>
+            <div
+              class="flexWrap flexAllCenter miniMobile"
+              style="position: relative; top: 2px"
+            >
+              <div>
+                <form id="navSearch" action="">
+                  <input type="text" />
+                  <img src="img/base/search.svg" alt="" />
+                </form>
+              </div>
+              <img
+                src="img//base/mailForNavbar.svg"
+                style="
+                  height: 30px;
+                  margin: 3px 5px;
+                  cursor: pointer;
+                  position: relative;
+                  bottom: 1px;
+                "
+                alt=""
+              />
+              <img
+                src="img/base/shoppingCart.svg"
+                style="height: 30px; margin: 3px 5px; cursor: pointer"
+                alt=""
+              />
+              <img
+                src="img/base/bell.svg"
+                style="height: 30px; margin: 3px 5px; cursor: pointer"
+                alt=""
+              />
+
+              <a class="btnCss flexAllCenter" style="color: white" href=""
+                >登入</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ！！！寫在這裡！！！
+      如果要讓區塊至中的話可以使用containerBase這個class(目前寬度1140px) -->
+      <!-- 購物車頂部 -->
+      <div class="shopcar-nav">
+        <div class="car1">
+          <img src="/img/base/trolley.png" alt="" />
+          <span>購物車明細</span>
+        </div>
+      </div>
+      <div class="SCcontainer">
+        <div class="SCbox">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            </label>
+          </div>
+          <img src="img/base/image 26.png" alt="" />
+          
+          <span>ASUS TUF Gaming M3 Gen II 超輕量電競滑鼠</span>
+          <select>
+            <option value="value1" selected>1</option>
+            <option value="value2">2</option>
+            <option value="value3">3</option>
+            <option value="value3">4</option>
+            <option value="value3">5</option>
+            <option value="value3">6</option>
+            <option value="value3">7</option>
+            <option value="value3">8</option>
+          </select>
+          <button id="nowbuy1">移除</button>
+        </div>
+        <div class="SCbox"></div>
+        <div class="SCbox"></div>
+        <div class="SCbox"></div>
+        <div class="SCbox"></div>
+        <div class="SCbox"></div>
+        <div class="SCbox"></div>
+          <!----------------- 填寫資料區 -------------->
+        <div class="Datainput">
+          <form class="input-box">
+            <label for="name">收件人姓名:</label>
+            <input type="text" id="name" name="name" />
+            <label for="name">收件人地址:</label>
+            <input type="text" id="address" name="address" />
+            <label for="name">收件人電話:</label>
+            <input type="text" id="phone" name="phone" />
+            <label for="name">折扣碼:</label>
+            <input type="text" id="discount code" name="discount code" />
+          </form>
+           <!----------------- 填寫資料結束 --------------->
+
+            <!----------------- 計算區 --------------------->
+            <div class="btn5">
+          
+              <form>
+                <label for="price">金額：</label>
+                <input id="priceInput" type="number" id="priceInput" name="price">
+              
+                <label for="discount">折扣金額：</label>
+                <input id="discountInput" type="number" id="discountInput" name="discount">
+              
+                <label for="result">應付金額：</label>
+                <input type="number" id="result" name="result" readonly><br><br>
+              </form>
+          
+                <button id="nowbuy"onclick="window.location.href = 'successful purchase.html'">確認購買</button>
+               
+                
+            </div>
+           
+               
+           
+            <!----------- 計算區結束 ------------->
+          
+         
+      </div>
+      <div class=""></div>
+    </main>
+    <footer style="background-color: #3c6a36; color: white">
+      <div
+        class="containerFooter flexAllCenter"
+        style="box-sizing: border-box; padding-top: 50px"
+      >
+        <div class="flexWrap">
+          <ul class="col_33">
+            <li class="flexAllCenter" style="color: #a4c964; font-size: 40px">
+              懸賞啼雀
+            </li>
+            <li
+              class="flexAllCenter"
+              style="margin: 10px 30px; font-weight: normal"
+            >
+              Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea
+              dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet
+              elitr stet diam duo eos rebum ipsum diam ipsum elitr.
+            </li>
+            <li
+              id="imgIcon"
+              class="flexVerticalCenter"
+              style="margin: 20px 30px"
+            >
+              <img src="img/base/facebook.svg" class="imgIntroduce" alt="" />
+              <img src="img/base/twitter.svg" class="imgIntroduce" alt="" />
+              <img src="img/base/instagram.svg" class="imgIntroduce" alt="" />
+            </li>
+          </ul>
+          <ul class="col_33 flexHorizontalCenter miniMobile">
+            <div style="width: 70%">
+              <li
+                class="flexAllCenter"
+                style="color: #a4c964; font-size: 30px; height: 65px"
+              >
+                Get In Touch
+              </li>
+              <div class="" style="height: 250px; font-weight: 400">
+                <li class="flexWrap" style="margin-top: 10px">
+                  <img
+                    src="img/base/map-marker.svg"
+                    style="height: 24px; padding-right: 10px; margin-top: 6px"
+                    alt=""
+                  />
+                  <div>
+                    <h3>地址</h3>
+                    <h5>123</h5>
+                  </div>
+                </li>
+
+                <li class="flexWrap" style="margin-top: 10px">
+                  <img
+                    src="img/base/mail.svg"
+                    style="height: 24px; padding-right: 10px; margin-top: 6px"
+                    alt=""
+                  />
+                  <div>
+                    <h3>信箱</h3>
+                    <h5>a1234567890@gmail.com</h5>
+                  </div>
+                </li>
+
+                <li class="flexWrap" style="margin-top: 10px">
+                  <img
+                    src="img/base/phone.svg"
+                    style="height: 24px; padding-right: 10px; margin-top: 6px"
+                    alt=""
+                  />
+                  <div>
+                    <h3>連絡電話</h3>
+                    <h5>0900123456</h5>
+                  </div>
+                </li>
+              </div>
+            </div>
+          </ul>
+          <ul class="col_33 flexHorizontalCenter miniMobile">
+            <div style="width: 40%">
+              <li
+                class="flexAllCenter"
+                style="color: #a4c964; font-size: 30px; height: 65px"
+              >
+                網站地圖
+              </li>
+              <div>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>首頁</a>
+                </li>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>課程</a>
+                </li>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>活動</a>
+                </li>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>許願池</a>
+                </li>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>論壇</a>
+                </li>
+                <li style="margin-top: 5px">
+                  <a class="webMapLink" href="">>商城</a>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- -------------------------------------------- -->
+<!-- js -->
+<!---------------------------- 計算金額js ------------------->
+<script>
+ window.onload = function() {
+        var priceInput = document.getElementById("priceInput");
+        var discountInput = document.getElementById("discountInput");
+        var resultInput = document.getElementById("result");
+
+
+
+        function calculateResult() {
+          var price = parseFloat(priceInput.value) || 0;
+          var discount = parseFloat(discountInput.value) || 0;
+          var result = price - discount;
+          resultInput.value = result.toFixed(2);
+          }
+        
+    priceInput.addEventListener("input", calculateResult);
+    discountInput.addEventListener("input", calculateResult);
+  }
+  // -----------------計算金額js結束----------------------
+// -------------------移除物件按鈕JS---------------------
+const removeBtn = document.getElementById('nowbuy1');
+
+removeBtn.addEventListener('click', function() {
+  const scBox = this.closest('.SCbox');
+  // 移除 scBox 的 class，例如 'selected'、'checked' 等等
+  // scBox.classList.remove('selected');
+  // scBox.classList.remove('checked');
+  // 或者直接移除 scBox 元素
+  scBox.remove();
+});
+// -------------------移除物件按鈕JS結束---------------------
+let name = ('請輸入姓名')
+let address = ('請輸入地址')
+let phone =('請輸入電話')
+
+
+</script>
+  </body>
+</html>
+
+
+
+
+
