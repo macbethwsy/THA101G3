@@ -136,6 +136,7 @@
           <img src="img/base/image 26.png" alt="" />
           
           <span>ASUS TUF Gaming M3 Gen II 超輕量電競滑鼠</span>
+          <ul id="cart-items"></ul>
           <select>
             <option value="value1" selected>1</option>
             <option value="value2">2</option>
@@ -340,10 +341,52 @@ removeBtn.addEventListener('click', function() {
 let name = ('請輸入姓名')
 let address = ('請輸入地址')
 let phone =('請輸入電話')
-
-
 </script>
-  </body>
+
+
+<script>
+let arr = [
+  { brand: "超輕量電競滑鼠", name: "A001", price: 890, url: './img/base/image 26.png', 價位: 'low', id: 'A001' },
+  { brand: "電競鍵盤", name: "A002", price: 3999, url: './img/base/image 27.png', 價位: 'high', id: 'A002' },
+  { brand: "電競耳機", name: "A003", price: 2999, url: './img/base/000001_1648703118.jpg', 價位: 'low', id: 'A003' },
+  { brand: "電競螢幕", name: "A004", price: 32999, url: './img/base/000001_1678876764.jpg', 價位: 'high', id: 'A004' },
+];
+
+let items = document.querySelector('#item-list');
+let addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+
+cartItems = [];
+
+function addToCart(event) {
+  let itemId = event.target.parentNode.parentNode.id;
+  let selectedItem = arr.find(item => item.id === itemId);
+  cartItems.push(selectedItem);
+  updateCartCount();
+}
+
+function updateCartCount() {
+  let cartCount = document.getElementById('cart-count');
+  cartCount.textContent = cartItems.length;
+}
+
+addToCartBtns.forEach(btn => {
+  btn.addEventListener('click', addToCart);
+});
+
+// 讀取 localStorage 中的購物車內容
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+let cartPageItems = document.querySelector('#cart-items');
+cartPageItems.innerHTML = '';
+cartItems.forEach(item => {
+  cartPageItems.innerHTML += `
+    <li>${item.name} - NT.${item.price}</li>
+  `;
+});
+
+
+  </script>
+</body>
 </html>
 
 

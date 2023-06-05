@@ -20,7 +20,7 @@
     <!-- bootstrap相關 -->
 
     <link href="css/baseVer2.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/leo.css">
+    <link rel="stylesheet" href="css/leo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,6 +29,7 @@
     />
     <script src="jquery/jquery-3.6.4.min.js"></script>
     <script src="js/base.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <title>懸賞啼雀商城</title>
   </head>
@@ -118,7 +119,8 @@
                 "
                 alt=""
               />
-              <img
+              <img id="cart-icon"
+                onclick=""
                 src="img/base/shoppingCart.svg"
                 class="miniMobile"
                 style="height: 30px; margin: 3px 5px; cursor: pointer"
@@ -143,224 +145,188 @@
     <main class="TeacherWanted">
       <!-- ！！！寫在這裡！！！
       如果要讓區塊至中的話可以使用containerBase這個class(目前寬度1140px) -->
-         <!-- 區塊1banner大圖 -->
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <!-- banner輪播圖 -->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/img/base/banner_1.jpg" class="d-block w-100" alt="...">
+            <img src="/img/base/banner_1.jpg" class="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item">
-            <img src="/img/base/banner_2.jpg" class="d-block w-100" alt="...">
+            <img src="/img/base/banner_2.jpg" class="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item">
-            <img src="/img/base/banner_3.jpg" class="d-block w-100" alt="...">
+            <img src="/img/base/banner_3.jpg" class="d-block w-100" alt="..." />
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-     <!-- ----------------------------------------------------- -->
-     
-      
-      <!-- banner下面商品區域2 -->
-      <div class="boxbox1">
-      <!-- 區域2版心 -->
-      <div class="Wordcontainer">
-        <!-- 熱賣商品區塊 -->
-        <div class="hot">
-          <span id="img30">
-            <img src="/img/base/image 30.png" alt="" />
-            熱賣商品
-          </span>
+
+      <!-- banner輪播圖結束-->
+      <!-------- 主要頁面板心 --------->
+
+      <div id="app">
+      <div class="all-container">
+        <div class="black-container1">
+          <span id="hot99"
+            ><img src="/img/base/image 30.png" alt="" />熱賣商品</span
+          >
+          <ul id="item-list"></ul>
+          <ul id="cart-items"></ul>
         </div>
+
       </div>
-      <!-- 商品圖背景 -->
-      <div class="c1">
-        <div class="Commoditymap1">
-          <a href="Muse Details.html">
-          <img id="img26" src="img/base/image 26.png" alt="" />
-          </a>
-          <div class="asus">
-            <span>ASUS電競滑鼠</span>
+
+        <!-- <div class="black-container2">
+          <div class="hot100">
+          <span><img src="/img/base/laptop.png" alt="" />
+            電腦配件</span>
+            <button id="btn66">查看更多></button>
+          </div>
+          <div class="itemblack1">
+            <div class="item" id="A002">
+              <img src="/img/base/image 27.png" alt="">
+              <span>ASUS ROG Strix Flare II </span>
+              <span>Animate NX</span>
+              <span>機械式電競鍵盤[青軸]</span>
+              <span>NT.3990</span>
+              <div calss="btnblock">
+                <button class="add-to-cart-btn">加入購物車</button>
+                <button class="buy-now-btn">立即購買</button>
+              </div>
+              
+            </div>
+            <div class="item" id="A002">
+              <img src="/img/base/image 27.png" alt="">
+              <span>ASUS ROG Strix Flare II </span>
+              <span>Animate NX</span>
+              <span>機械式電競鍵盤[青軸]</span>
+              <span>NT.3990</span>
+              <div calss="btnblock">
+                <button class="add-to-cart-btn">加入購物車</button>
+                <button class="buy-now-btn">立即購買</button>
+              </div>
+              
+            </div>
+            <div class="item" id="A002">
+              <img src="/img/base/image 27.png" alt="">
+              <span>ASUS ROG Strix Flare II </span>
+              <span>Animate NX</span>
+              <span>機械式電競鍵盤[青軸]</span>
+              <span>NT.3990</span>
+              <div calss="btnblock">
+                <button class="add-to-cart-btn">加入購物車</button>
+                <button class="buy-now-btn">立即購買</button>
+              </div>
+              
+            </div>
+            <div class="item" id="A002">
+              <img src="/img/base/image 27.png" alt="">
+              <span>ASUS ROG Strix Flare II </span>
+              <span>Animate NX</span>
+              <span>機械式電競鍵盤[青軸]</span>
+              <span>NT.3990</span>
+              <div calss="btnblock">
+                <button class="add-to-cart-btn">加入購物車</button>
+                <button class="buy-now-btn">立即購買</button>
+              </div>
+             
+            </div>
+        </div>
+      </div> -->
+      <!-- <div class="black-container1">
+        <div class="hot101">
+        <span>
+          <img src="/img/base/trolley.png" alt="" />全部商品</span>
+          <button id="btn66">查看更多></button>
+        </div>
+        <div class="itemblack">
+          <div class="item" id="A001">
+            <img src="/img/base/image 26.png" alt="" />
+            <span style="font-size: 15px">ASUS TUF Gaming M3 Gen II</span>
+            <span>超輕量電競滑鼠</span>
             <span>NT.890</span>
-            <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
+            <div calss="btnblock">
+              <button class="add-to-cart-btn">加入購物車</button>
+              <button class="buy-now-btn">立即購買</button>
+            </div>
           </div>
-        </div>
-        <div class="c2">
-          <div class="Commoditymap1">
-            <a href="Muse Details.html">
-            <img id="img26" src="/img/base/image 26.png" alt="" />
-            </a>
-            <div class="asus">
-              <span>ASUS電競滑鼠</span>
-              <span>NT.890</span>
-              <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
+          <div class="item" id="A001">
+            <img src="/img/base/image 26.png" alt="" />
+            <span style="font-size: 15px">ASUS TUF Gaming M3 Gen II</span>
+            <span>超輕量電競滑鼠</span>
+            <span>NT.890</span>
+            <div calss="btnblock">
+              <button class="add-to-cart-btn" onclick="">加入購物車</button>
+              <button class="buy-now-btn" onclick="">立即購買</button>
+            </div>
+          </div>
+          <div class="item" id="A001">
+            <img src="/img/base/image 26.png" alt="" />
+            <span style="font-size: 15px">ASUS TUF Gaming M3 Gen II</span>
+            <span>超輕量電競滑鼠</span>
+            <span>NT.890</span>
+            <div calss="btnblock">
+              <button class="add-to-cart-btn">加入購物車</button>
+              <button class="buy-now-btn">立即購買</button>
+            </div>
+          </div>
+          <div class="item" id="A001">
+            <img src="/img/base/image 26.png" alt="" />
+            <span style="font-size: 15px">ASUS TUF Gaming M3 Gen II</span>
+            <span>超輕量電競滑鼠</span>
+            <span>NT.890</span>
+            <div calss="btnblock">
+              <button class="add-to-cart-btn">加入購物車</button>
+              <button class="buy-now-btn">立即購買</button>
             </div>
           </div>
         </div>
-
-        <div class="Commoditymap1">
-          <div class="c3">
-            <div class="Commoditymap2">
-              <a href="Muse Details.html">
-              <img id="img26" src="/img/base/image 26.png" alt="" />
-            </a>
-              <div class="asus">
-                <span>ASUS電競滑鼠</span>
-                <span>NT.890</span>
-                <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="Commoditymap1">
-          <div class="c4">
-            <div class="Commoditymap2">
-              <a href="Muse Details.html">
-              <img id="img26" src="/img/base/image 26.png" alt="" />
-            </a>
-              <div class="asus">
-                <span>ASUS電競滑鼠</span>
-                <span>NT.890</span>
-                <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- banner下面背景區域3-->
-      <div class="boxbox3">
-        <!-- 區域2版心 -->
-        <div class="box2container">
-          <!-- 熱賣商品區塊 -->
-          <div class="hot1">
-            <span id="img30">
-              <img src="/img/base/laptop.png" alt="" />
-              電腦配件
-               </span>
-              <button class="btn2">查看更多 ></button>
-          </div>
-        </div>
-        <!-- 商品圖背景 -->
-        <div class="c1">
-          <div class="Commoditymap1">
-            <a href="Keybord Details.html">
-            <img id="img26" src="img/base/image 27.png" alt="" />
-          </a>
-            <div class="asus">
-              <span>ASUS電競鍵盤</span>
-                  <span>NT.3990</span>
-                  <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-            </div>
-          </div>
-          <div class="c2">
-            <div class="Commoditymap2">
-              <img id="img27" src="/img/base/image 27.png" alt="" />
-              <div class="asus">
-                <span>ASUA電競鍵盤</span>
-                  <span>NT.3990</span>
-                  <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-  
-          <div class="Commoditymap3">
-            <div class="c3">
-              <div class="Commoditymap2">
-                <img id="img28" src="/img/base/image 27.png" alt="" />
-                <div class="asus">
-                  <span>ASUS電競鍵盤</span>
-                  <span>NT.3990</span>
-                  <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="Commoditymap4">
-            <div class="c4">
-              <div class="Commoditymap2">
-                <img id="img28" src="/img/base/image 27.png" alt="" />
-                <div class="asus">
-                  <span>ASUS電競鍵盤</span>
-                  <span>NT.3990</span>
-                  <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- banner下面商品區域4 -->
-      <div class="boxbox2">
-        <!-- 區域2版心 -->
-        <div class="box2container">
-          <!-- 熱賣商品區塊 -->
-          <div class="hot3">
-            <span id="img30">
-              <img src="/img/base/star.png" alt="" />
-              全部商品
-            </span>
-            <button class="btn2">查看更多 ></button>
-          </div>
-        </div>
-        <!-- 商品圖背景 -->
-        <div class="c1">
-          <div class="Commoditymap1">
-            <div class="c2">
-              <div class="Commoditymap2">
-                <img id="img27" src="/img/base/image 26.png" alt="" />
-                <div class="asus">
-                  <span>ASUS電競滑鼠</span>
-                  <span>NT.890</span>
-                  <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c2">
-            <div class="Commoditymap2">
-              <img id="img27" src="/img/base/image 26.png" alt="" />
-              <div class="asus">
-                <span>ASUS電競滑鼠</span>
-                <span>NT.890</span>
-                <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-  
-          <div class="c2">
-            <div class="Commoditymap2">
-              <img id="img27" src="/img/base/image 26.png" alt="" />
-              <div class="asus">
-                <span>ASUS電競滑鼠</span>
-                <span>NT.890</span>
-                <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-          <div class="c2">
-            <div class="Commoditymap2">
-              <img id="img27" src="/img/base/image 26.png" alt="" />
-              <div class="asus">
-                <span>ASUS電競滑鼠</span>
-                <span>NT.890</span>
-                <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      
+      </div> -->
+      
 
     </main>
 
@@ -477,30 +443,13 @@
     </footer>
   </body>
 
-  <SCript>
-    // ==================JS購物頁面======================
-    // let str =''
-    // let items = document.querySelector('.c1');
+<script>
+  
+</script>
 
-    // let arr =[
-    //   {brand: "ASUS-muse", name: "S1232", price: 899, url: './img/base/image 26.png', 價位: 'low', id: 'A001'},
-    //   {brand: "ASUS-keybord", name: "S1232", price: 3999, url: './img/base/image 27.png', 價位: 'low', id: 'A002'}
-    // ]
-    
 
-  //   arr.forEach(item => {
-  //     // console.log(arr)
-  //     str +=`
-  //         <div class="Commoditymap2">
-  //             <img id="img27" src="/img/base/image 26.png" alt="" />
-  //             <div class="asus">
-  //               <span>ASUA電競滑鼠</span>
-  //               <span>NT.890</span>
-  //               <button id="nowbuy" onclick="window.location.href = 'shop-car.html'";>立即購買</button>
-  //             </div>
-  //         </div>
-  //     `
-  //   })
-  //   document.querySelector('.Commoditymap2').innerHTML = str
-  // </SCript>
+
+
+
+  
 </html>

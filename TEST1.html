@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>購物車功能</title>
+      </head>
+      <body>
+        <ul id="items"></ul>
+
+        <script>
+          const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
+
+          addToCartBtns.forEach((btn) => {
+            btn.addEventListener("click", addToCart);
+          });
+
+          let arr = [
+            {
+              brand: "超輕量電競滑鼠",
+              name: "A001",
+              price: 890,
+              url: "./img/base/image 26.png",
+              價位: "low",
+              id: "A001",
+            },
+            {
+              brand: "電競鍵盤",
+              name: "A002",
+              price: 3999,
+              url: "./img/base/image 27.png",
+              價位: "high",
+              id: "A002",
+            },
+            {
+              brand: "電競耳機",
+              name: "A003",
+              price: 2999,
+              url: "./img/base/000001_1648703118.jpg",
+              價位: "low",
+              id: "A003",
+            },
+            {
+              brand: "電競螢幕",
+              name: "A004",
+              price: 32999,
+              url: "./img/base/000001_1678876764.jpg",
+              價位: "high",
+              id: "A004",
+            },
+          ];
+
+          function loadItems(data) {
+            const items = document.getElementById("items");
+            items.innerHTML = "";
+
+            data.forEach(function (item) {
+              items.innerHTML += `<li class="item" id="${item.id}">
+            <img src="${item.url}" alt="" />
+            <span style="font-size: 15px">${item.brand}</span>
+            <span>${item.name}</span>
+            <span>NT.${item.price}</span>
+            <div class="btnblock">
+              <button class="add-to-cart-btn" data-id="${item.id}">加入購物車</button>
+              <button class="buy-now-btn" data-id="${item.id}">立即購買</button>
+            </div>
+          </li>`;
+            });
+          }
+
+          function addToCart(event) {
+            const itemId = event.target.dataset.id;
+            // 在此處理將商品加入購物車的邏輯
+            console.log("加入購物車 - 商品ID：", itemId);
+          }
+
+          loadItems(arr);
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
